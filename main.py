@@ -8,7 +8,7 @@ import logging
 parser = argparse.ArgumentParser()
 parser.add_argument("-dev", dest="dev", type=str)
 parser.add_argument("-logger", dest="logger", type=str)
-parser.add_argument("-test", dest="test", type=bool)
+parser.add_argument("-test", dest="test", type=str)
 
 # 获取参数
 args = parser.parse_args()
