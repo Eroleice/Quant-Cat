@@ -19,7 +19,7 @@ pro = ts.pro_api(config.tushareToken)
 
 
 # 撰写内容
-def write(document: Document, path: str) -> Document():
+def write(document: type(Document), path: str) -> Document():
     logger.info('[今日市场] 模块开始载入 ...')
 
     # 添加标题
@@ -36,7 +36,7 @@ def write(document: Document, path: str) -> Document():
         paragraph = document.add_paragraph('今日，共有 ')
         paragraph.add_run(str(data['stocks']['increase']) + ' 只股票上涨， ')
         paragraph.add_run(str(data['stocks']['decrease']) + ' 只股票下跌， ')
-        paragraph.add_run(str(data['stocks']['decrease']) + ' 只股票持平或停牌。')
+        paragraph.add_run(str(data['stocks']['noChange']) + ' 只股票持平或停牌。')
         paragraph.paragraph_format.line_spacing = 1.5
     # endregion
 
